@@ -61,5 +61,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+      - name: print value of pages_url
+        run: echo $PAGES_URL
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
 
 
